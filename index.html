@@ -6,7 +6,34 @@
     <meta name="viewport" content="width=device=width, initial-scale=1.0">
     <title>Сайт web-тудії "Web-DECO"</title>
 
+    <!-- ====================  JAVASCRIPT=============================================== -->
+    <script src="js/clock1.js"></script>
+    <script type="text/javascript">
+        function send() {
+            var valid = true;
+            var elems = document.forms[0].elements;
+            for (var i = 0; i < document.forms[0].length; i++) {
+                if (elems[i].getAttribute('type') == 'text' ||
+                    elems[i].getAttribute('type') == 'password' ||
+                    elems[i].getAttribute('type') == 'email') {
+                    if (elems[i].value == '') {
+                        elems[i].style.border = '2px solid red';
+                        valid = false;
+                    }
+                }
+            }
+            if (!valid) {
+                alert('Будь ласка, заповніть всі поля валідними даними!!!');
+                return false;
+            }
+        }
+    </script>
+    <!-- =================================================================== -->
+
+</HEAD>
+
     <!-- ==================== css стили =============================================== -->
+
     <style>
         .shadowtext {
             text-shadow: 1px 3px 2px white, 0 0 1em red;
@@ -14,7 +41,10 @@
             font-size: 4em;
         }
     </style>
-
+<script>
+    window.onload = function () {setInterval(clockPainting, 10000; )
+    }
+    </script>
 </HEAD>
 <BODY background="images/bg.jpg">
     <!-- =================== Каркас сайта ==================== -->
@@ -42,6 +72,7 @@
         </tr>
         <tr>
             <td width="30%" valign="top">
+                <center><canvas id="canvas" height="120" width="120"></canvas></center>
                 <font size="5" color="navy"><h2>Наші роботи</h2></font>
                 <font size="5">
                     <ul>
